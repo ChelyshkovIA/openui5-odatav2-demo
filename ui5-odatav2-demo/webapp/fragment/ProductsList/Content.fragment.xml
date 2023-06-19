@@ -1,0 +1,12 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <List
+        items="{/Products}">
+        <StandardListItem
+			title="{Name}"
+			description="{Description}"
+            
+            type="Navigation" />
+    </List>
+</core:FragmentDefinition>

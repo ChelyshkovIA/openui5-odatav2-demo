@@ -1,7 +1,28 @@
-<mvc:View controllerName="ui5odatav2demo.controller.ProductsList"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View
+    id="ProductsList"
+    controllerName="ui5odatav2demo.controller.ProductsList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+    <Page id="page" title="Products List">
+        <headerContent>
+            <core:Fragment type="XML" fragmentName="ui5odatav2demo.fragment.ProductsList.Header" />
+        </headerContent>
+
+        <subHeader>
+            <OverflowToolbar>
+                <core:Fragment type="XML" fragmentName="ui5odatav2demo.fragment.ProductsList.SubHeader" />
+            </OverflowToolbar>
+        </subHeader>
+
+        <content>
+            <core:Fragment type="XML" fragmentName="ui5odatav2demo.fragment.ProductsList.Content" />
+        </content>
+
+        <footer>
+            <OverflowToolbar>
+                <core:Fragment type="XML" fragmentName="ui5odatav2demo.fragment.ProductsList.Footer" />
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>
