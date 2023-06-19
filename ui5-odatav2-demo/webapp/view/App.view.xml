@@ -1,7 +1,8 @@
 <mvc:View controllerName="ui5odatav2demo.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.f"
+    height="100%"
+    xmlns:m="sap.m">
+    <FlexibleColumnLayout id="app" backgroundDesign="Solid" layout="TwoColumnsBeginExpanded" />
 </mvc:View>

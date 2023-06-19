@@ -84,30 +84,31 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "async": true,
         "viewPath": "ui5odatav2demo.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
+        "controlId": "app"
       },
       "routes": [
         {
+          "pattern": "",
           "name": "RouteProductsList",
-          "pattern": ":?query:",
-          "target": [
-            "TargetProductsList"
-          ]
+          "target": ["ProductsList", "ProductDetails"]
         }
       ],
       "targets": {
-        "TargetProductsList": {
+        "ProductsList": {
           "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
           "viewId": "ProductsList",
-          "viewName": "ProductsList"
+          "viewName": "ProductsList",
+          "controlAggregation": "beginColumnPages"
+        },
+        "ProductDetails": {
+          "viewType": "XML",
+          "viewId": "ProductDetails",
+          "viewName": "ProductDetails",
+          "controlAggregation": "midColumnPages"
         }
       }
     },
