@@ -1,0 +1,14 @@
+<mvc:View
+    id="ProductDetails"
+    controllerName="ui5odatav2demo.controller.ProductDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page
+        id="productDetailsPage"
+        title="Product Details">
+    
+        <content>
+            <Text text="Product Details" />
+        </content>
+    </Page>
+</mvc:View>
