@@ -4,5 +4,5 @@
     xmlns="sap.f"
     height="100%"
     xmlns:m="sap.m">
-    <FlexibleColumnLayout id="app" backgroundDesign="Solid" layout="TwoColumnsBeginExpanded" />
+    <FlexibleColumnLayout id="app" backgroundDesign="Solid" layout="{fcl>/layout}" />
 </mvc:View>
