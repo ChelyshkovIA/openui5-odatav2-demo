@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    
+    <FlexBox height="100%" alignItems="Center" justifyContent="Center" direction="Column">
+        <VBox alignItems="Center" height="100px">
+            <Title text="NO PRODUCT SELECTED" />
+            <Image height="50px" src="img/nothing.png" />
+        </VBox>
+    </FlexBox>
+</core:FragmentDefinition>

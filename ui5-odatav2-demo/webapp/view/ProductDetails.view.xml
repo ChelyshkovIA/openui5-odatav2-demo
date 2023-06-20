@@ -2,13 +2,12 @@
     id="ProductDetails"
     controllerName="ui5odatav2demo.controller.ProductDetails"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <Page
         id="productDetailsPage"
         title="Product Details">
     
-        <content>
-            <Text text="Product Details" />
-        </content>
+        <content></content>
     </Page>
 </mvc:View>
