@@ -7,6 +7,7 @@
 			title="{Name}"
 			description="{Description}"
             
-            type="Navigation" />
+            type="Navigation"
+            press=".onProductPress" />
     </List>
 </core:FragmentDefinition>

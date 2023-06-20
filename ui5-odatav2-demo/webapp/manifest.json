@@ -95,6 +95,11 @@
           "pattern": "",
           "name": "RouteProductsList",
           "target": ["ProductsList", "ProductDetails"]
+        },
+        {
+          "pattern": "product/{productId}",
+          "name": "SelectedProduct",
+          "target": ["ProductsList", "ProductDetails"]
         }
       ],
       "targets": {
