@@ -22,11 +22,11 @@ sap.ui.define([
         },
 
         async _showProductInfoFragment() {
-            const oProductInfoText = new sap.m.Text({
-                text: `Product[${this.productId}] info text!!!`
-            });
+            if (!this.productInfoFragment) {
+                this.productInfoFragment = await this.loadFragment({ name: "ui5odatav2demo.fragment.ProductDetails.ProductInfo" });
+            }
 
-            oProductInfoText.placeAt(this._getPage(), "only");
+            this.productInfoFragment.placeAt(this._getPage(), "only");
             this.getModel("fcl").setProperty("/layout", LayoutType.TwoColumnsMidExpanded);
         },
 

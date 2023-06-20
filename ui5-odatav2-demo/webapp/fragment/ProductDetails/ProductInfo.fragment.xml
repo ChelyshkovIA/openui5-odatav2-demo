@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns="sap.uxap">
+    <ObjectPageLayout id="productInfoObjectPage">
+        <headerTitle>
+            <ObjectPageHeader objectTitle="Product Name"></ObjectPageHeader>
+        </headerTitle>
+
+        <headerContent>
+            <m:Title text="Product Description lorem ipsum dolor sit amet duo isortemus on de fon craus." />
+        </headerContent>
+
+        <sections>
+            <ObjectPageSection title="Product Details">
+                <ObjectPageSubSection >
+                    <m:Text text="product details form here" />
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="Category Info">
+                <ObjectPageSubSection >
+                    <m:Text text="product details form here" />
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="Supplier Info">
+                <ObjectPageSubSection >
+                    <m:Text text="product details form here" />
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</core:FragmentDefinition>
