@@ -14,6 +14,13 @@ sap.ui.define([
             const sRoute = oEvent.getParameters().name;
             this.productId = oEvent.getParameters()?.arguments?.productId;
             await this._renderPageContent(sRoute);
+            this._rebindObjectPage();
+        },
+
+        _rebindObjectPage() {
+            if (!this.productId) return;
+
+            this.getControl("productInfoObjectPage").bindElement(`/Products(${this.productId})`);
         },
 
         async _renderPageContent(sRoute) {

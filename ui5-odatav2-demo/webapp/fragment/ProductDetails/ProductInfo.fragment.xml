@@ -1,32 +1,105 @@
 <core:FragmentDefinition
     xmlns:core="sap.ui.core"
+    xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
     xmlns:m="sap.m"
     xmlns="sap.uxap">
     <ObjectPageLayout id="productInfoObjectPage">
         <headerTitle>
-            <ObjectPageHeader objectTitle="Product Name"></ObjectPageHeader>
+            <ObjectPageHeader objectTitle="{Name} ({ID})"></ObjectPageHeader>
         </headerTitle>
 
         <headerContent>
-            <m:Title text="Product Description lorem ipsum dolor sit amet duo isortemus on de fon craus." />
+            <m:Title text="{Description}" />
         </headerContent>
 
         <sections>
             <ObjectPageSection title="Product Details">
                 <ObjectPageSubSection >
-                    <m:Text text="product details form here" />
+                    <smartForm:SmartForm title="Details">
+                        <smartForm:Group>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="ID" value="{ID}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Product Name" value="{Name}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Description" value="{Description}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Release Date" value="{ReleaseDate}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Descountinued Date" value="{DescountinuedDate}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartForm:label>
+                                    <m:Label class="sapUiTinyMarginTop" text="Rating" />
+                                </smartForm:label>
+                                <smartForm:elements>
+                                    <m:RatingIndicator iconSize="12px" value="{Rating}" />
+                                </smartForm:elements>
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Price" value="{Price}" />
+                            </smartForm:GroupElement>
+                        </smartForm:Group>
+                    </smartForm:SmartForm>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
             <ObjectPageSection title="Category Info">
                 <ObjectPageSubSection >
-                    <m:Text text="product details form here" />
+                    <smartForm:SmartForm title="Category">
+                        <smartForm:Group>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Category ID" value="{Category/ID}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Category Name" value="{Category/Name}" />
+                            </smartForm:GroupElement>
+                        </smartForm:Group>
+                    </smartForm:SmartForm>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
             <ObjectPageSection title="Supplier Info">
                 <ObjectPageSubSection >
-                    <m:Text text="product details form here" />
+                    <smartForm:SmartForm title="Supplier">
+                        <smartForm:Group>
+                            <smartForm:title>
+                                <core:Title text="Supplier Info" />
+                            </smartForm:title>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="ID" value="{Supplier/ID}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Name" value="{Supplier/Name}" />
+                            </smartForm:GroupElement>
+                        </smartForm:Group>
+
+                        <smartForm:Group>
+                            <smartForm:title>
+                                <core:Title text="Address" />
+                            </smartForm:title>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Street" value="{Supplier/Address/Street}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="City" value="{Supplier/Address/City}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="State" value="{Supplier/Address/State}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Zip Code" value="{Supplier/Address/ZipCode}" />
+                            </smartForm:GroupElement>
+                            <smartForm:GroupElement>
+                                <smartField:SmartField textLabel="Country" value="{Supplier/Address/Country}" />
+                            </smartForm:GroupElement>
+                        </smartForm:Group>
+                    </smartForm:SmartForm>
                 </ObjectPageSubSection>
             </ObjectPageSection>
         </sections>
