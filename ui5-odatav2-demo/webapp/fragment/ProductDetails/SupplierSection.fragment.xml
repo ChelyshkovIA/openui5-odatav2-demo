@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+    <smartForm:SmartForm title="Supplier">
+        <smartForm:Group>
+            <smartForm:title>
+                <core:Title text="Supplier Info" />
+            </smartForm:title>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="ID" value="{Supplier/ID}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="Name" value="{Supplier/Name}" />
+            </smartForm:GroupElement>
+        </smartForm:Group>
+
+        <smartForm:Group>
+            <smartForm:title>
+                <core:Title text="Address" />
+            </smartForm:title>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="Street" value="{Supplier/Address/Street}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="City" value="{Supplier/Address/City}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="State" value="{Supplier/Address/State}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="Zip Code" value="{Supplier/Address/ZipCode}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField textLabel="Country" value="{Supplier/Address/Country}" />
+            </smartForm:GroupElement>
+        </smartForm:Group>
+    </smartForm:SmartForm>
+</core:FragmentDefinition>
