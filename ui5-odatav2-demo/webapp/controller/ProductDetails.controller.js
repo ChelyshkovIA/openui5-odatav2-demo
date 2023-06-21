@@ -10,6 +10,22 @@ sap.ui.define([
             this.getRouter().attachRoutePatternMatched(this._onPatternMatched.bind(this));
         },
 
+        onProductEditPress() {
+            console.log("product")
+        },
+        
+        onCategoryEditPress() {
+            console.log("category")
+        },
+        
+        onSupplierEditPress() {
+            console.log("supplier")
+        },
+        
+        onAddressEditPress() {
+            console.log("address")
+        },
+
         async _onPatternMatched(oEvent) {
             const sRoute = oEvent.getParameters().name;
             this.productId = oEvent.getParameters()?.arguments?.productId;

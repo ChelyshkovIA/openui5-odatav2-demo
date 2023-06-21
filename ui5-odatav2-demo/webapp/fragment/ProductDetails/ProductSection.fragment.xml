@@ -5,6 +5,12 @@
     xmlns:m="sap.m">
     <smartForm:SmartForm title="Details">
         <smartForm:Group>
+            <smartForm:toolbar>
+                <m:OverflowToolbar >
+                    <m:ToolbarSpacer />
+                    <m:Button icon="sap-icon://edit" press=".onProductEditPress" />
+                </m:OverflowToolbar>
+            </smartForm:toolbar>
             <smartForm:GroupElement>
                 <smartField:SmartField textLabel="ID" value="{ID}" />
             </smartForm:GroupElement>
