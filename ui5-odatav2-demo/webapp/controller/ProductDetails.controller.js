@@ -1,29 +1,63 @@
 sap.ui.define([
     "./base/BaseController",
-    "sap/f/LayoutType"
-], function (Controller, LayoutType) {
+    "sap/f/LayoutType",
+    "sap/ui/model/json/JSONModel"
+], function (Controller, LayoutType, JSONModel) {
     "use strict";
 
     return Controller.extend("ui5odatav2demo.controller.ProductDetails", {
         onInit: function () {
             Controller.prototype.onInit.apply(this);
             this.getRouter().attachRoutePatternMatched(this._onPatternMatched.bind(this));
+            this._initAppModel();
         },
 
         onProductEditPress() {
-            console.log("product")
+            this._enableEditMode("product");
+        },
+
+        onProductSavePress() {
+            this._disableEditMode("product");
+        },
+
+        onProductCancelPress() {
+            this._disableEditMode("product");
         },
         
         onCategoryEditPress() {
-            console.log("category")
+            this._enableEditMode("category");
+        },
+
+        onCategorySavePress() {
+            this._disableEditMode("category");
+        },
+
+        onCategoryCancelPress() {
+            this._disableEditMode("category");
         },
         
         onSupplierEditPress() {
-            console.log("supplier")
+            this._enableEditMode("supplier");
+        },
+
+        onSupplierSavePress() {
+            this._disableEditMode("supplier");
+        },
+        
+        onSupplierCancelPress() {
+            this._disableEditMode("supplier");
         },
         
         onAddressEditPress() {
-            console.log("address")
+            this._enableEditMode("address");
+        },
+        
+        onAddressSavePress() {
+            this._disableEditMode("address");
+        },
+        
+        onAddressCancelPress() {
+            this._disableEditMode("address");
         },
 
         async _onPatternMatched(oEvent) {
@@ -31,6 +65,37 @@ sap.ui.define([
             this.productId = oEvent.getParameters()?.arguments?.productId;
             await this._renderPageContent(sRoute);
             this._rebindObjectPage();
+        },
+
+        _initAppModel() {
+            const oModel = new JSONModel({
+                product: {
+                    isEditMode: false
+                },
+                category: {
+                    isEditMode: false
+                },
+                supplier: {
+                    isEditMode: false
+                },
+                address: {
+                    isEditMode: false
+                }
+            });
+
+            this.setModel(oModel, "app");
+        },
+
+        _getAppModel() {
+            return this.getModel("app");
+        },
+
+        _enableEditMode(sEntityPath) {
+            this._getAppModel().setProperty(`/${sEntityPath}/isEditMode`, true);
+        },
+
+        _disableEditMode(sEntityPath) {
+            this._getAppModel().setProperty(`/${sEntityPath}/isEditMode`, false);
         },
 
         _rebindObjectPage() {

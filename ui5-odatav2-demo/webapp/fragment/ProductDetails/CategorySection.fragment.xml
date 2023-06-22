@@ -8,7 +8,9 @@
             <smartForm:toolbar>
                 <m:OverflowToolbar >
                     <m:ToolbarSpacer />
-                    <m:Button icon="sap-icon://edit" press=".onCategoryEditPress" />
+                    <m:Button icon="sap-icon://save" visible="{app>/category/isEditMode}" press=".onCategorySavePress" />
+                    <m:Button icon="sap-icon://cancel" visible="{app>/category/isEditMode}" press=".onCategoryCancelPress" />
+                    <m:Button icon="sap-icon://edit" visible="{= !${app>/category/isEditMode} }" press=".onCategoryEditPress" />
                 </m:OverflowToolbar>
             </smartForm:toolbar>
             <smartForm:GroupElement>
